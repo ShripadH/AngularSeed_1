@@ -1,0 +1,19 @@
+<h2>
+    Client List</h2>
+<p>List of cats</p>
+<button (click)=AddCLients()>Add</button>
+
+ {{Isscrolled}}
+ scrollHeight {{scrollHeight}}
+
+ 
+ position {{position}}
+
+<div > This is div</div>
+
+<div class="overflowAuto"  (scroll)="onScroll($event)">    
+    <ul *ngFor="let client of clientList">        
+        <li [ngStyle]="{ 'background-image': 'url(' + image + ')'}"
+        [routerLink]="['/dashboard', client.id]">{{client.name}}</li>
+    </ul>
+</div>
